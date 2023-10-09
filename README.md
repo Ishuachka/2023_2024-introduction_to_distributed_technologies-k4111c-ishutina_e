@@ -8,3 +8,21 @@ Author: Ishutina Yelizaveta
 Lab: Lab1
 Date of create: 05.09.2023
 Date of finished: 
+
+## Лабораторная работа №1 "Установка Docker и Minikube, мой первый манифест."
+
+### Цель работы
+Ознакомиться с инструментами Minikube и Docker, развернуть свой первый "под".
+
+### Задачи
+1. Установить Docker, minikube
+2. Развернуть minikube cluster
+3. Создать под Vault и получить доступ к контейнеру
+4. Найти сгенерированный корневой токен, чтобы получить доступ к Vault.
+
+### Ход работы
+Изначально был установлен Docker Desktop для Windows и настроен WSL, в котором был установлен Minikube
+После установки был развернут minikube cluster с помощью команды minikube start:
+
+
+
