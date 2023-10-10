@@ -97,6 +97,8 @@ minikube kubectl logs vault
 
 
 Схема организации контейеров и сервисов нарисованная вами в draw.io или Visio.
+![](2023_2024-introduction_to_distributed_technologies-k4111c-ishutina_e/lab1/Images
+/diagram.png)
 
 
 
