@@ -23,6 +23,10 @@ Date of finished:
 ### Ход работы
 Изначально был установлен Docker Desktop для Windows и настроен WSL, в котором был установлен Minikube
 После установки был развернут minikube cluster с помощью команды minikube start:
+```bash
+minikube start
+```
+
 
 
 
