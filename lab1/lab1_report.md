@@ -32,7 +32,7 @@ Date of finished:
 ```bash
 minikube start
 ```
-![](start.png)
+![](images/start.png)
 
 Далее выполняются команды, которые добавляют на нашей локальной машине в список образов образ нужного ПО - Vault.
 ```bash
