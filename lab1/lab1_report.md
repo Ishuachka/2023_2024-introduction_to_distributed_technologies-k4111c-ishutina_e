@@ -38,5 +38,5 @@ docker images
 #просмотреть в minikube список всех образов
 minikube image ls
 ```
-![](list_of_mages.png)
+![](images.png)
 
