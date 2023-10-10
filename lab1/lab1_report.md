@@ -32,7 +32,7 @@ Date of finished:
 ```bash
 minikube start
 ```
-![start](./images/start.png](https://github.com/Ishuachka/2023_2024-introduction_to_distributed_technologies-k4111c-ishutina_e/blob/f20b178d913462b0802496e5edf64927659b822d/lab1/Images/start.png))
+![start](lab1/Images/start.png)
 
 Далее выполняются команды, которые добавляют на нашей локальной машине в список образов образ нужного ПО - Vault.
 ```bash
