@@ -34,3 +34,9 @@ docker pull vault:1.13.3
 docker images
 ```
 Теперь посмотрим список образов с помощью следующих команд:
+```bash
+#просмотреть в minikube список всех образов
+minikube image ls
+```
+![](list_of_mages.png)
+
