@@ -44,7 +44,7 @@ docker images
 #просмотреть в minikube список всех образов
 minikube image ls
 ```
-![](images.png)
+![start](./Images/start.png)
 
 В конце мы видим, что есть нужный нам образ vault:1.13.3
 
