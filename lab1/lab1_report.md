@@ -32,7 +32,7 @@ Date of finished:
 ```bash
 minikube start
 ```
-![start](lab1/Images/start.png)
+![start](start.png)
 
 Далее выполняются команды, которые добавляют на нашей локальной машине в список образов образ нужного ПО - Vault.
 ```bash
@@ -44,7 +44,7 @@ docker images
 #просмотреть в minikube список всех образов
 minikube image ls
 ```
-![start](./Images/start.png)
+![images](images.png)
 
 В конце мы видим, что есть нужный нам образ vault:1.13.3
 
@@ -97,8 +97,7 @@ minikube kubectl logs vault
 
 
 Схема организации контейеров и сервисов нарисованная вами в draw.io или Visio.
-![](2023_2024-introduction_to_distributed_technologies-k4111c-ishutina_e/lab1/Images
-/diagram.png)
+![](diafram.png)
 
 
 
