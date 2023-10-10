@@ -6,8 +6,8 @@ Year: 2023/2024
 Group: K4111с
 Author: Ishutina Yelizaveta
 Lab: Lab1
-Date of create: 05.09.2023
-Date of finished: 
+Date of create: 05.10.2023
+Date of finished: 10.10.2023
 
 ## Лабораторная работа №1 "Установка Docker и Minikube, мой первый манифест."
 
@@ -86,6 +86,7 @@ minikube kubectl logs vault
 ![token](token.png)
 
 Копируем данные Root Token и используем для входа в наш vault:
+
 ![entry](entry.png)
 
 Ответы на вопросы:
