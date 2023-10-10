@@ -26,8 +26,6 @@ Date of finished:
 ```bash
 minikube start
 ```
-
-
-
+![](start.png)
 
 
