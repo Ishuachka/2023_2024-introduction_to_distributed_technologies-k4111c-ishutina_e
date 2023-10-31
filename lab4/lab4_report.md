@@ -97,15 +97,13 @@ kubectl create -f calicoctl.yaml
 ```
 ![](/lab4/image/4.png)
 
-Перед созданием IPPools, проверяются созданные по-умолчанию и удаляются: 
+Перед созданием IPPools, проверяются созданные по-умолчанию и удаляются c помощью следующих команд: 
 ```
 kubectl exec -i -n kube-system calicoctl -- /calicoctl --allow-version-mismatch get ippools -o wide
 ```
 ```
 kubectl delete ippools default-ipv4-ippool
 ```
-
-![]()
 
 Теперь можно приступить к созданию IPPools с помощью команды:
 ```
@@ -117,37 +115,24 @@ kubectl exec -i -n kube-system calicoctl -- /calicoctl --allow-version-mismatch 
 ```
 kubectl exec -i -n kube-system calicoctl -- /calicoctl --allow-version-mismatch get ippool -o wide
 ```
-![]()
+![](/lab4/image/6.png)
 
-Заметим, что их [маски подсети (CIDR)](https://ru.wikipedia.org/wiki/Маска_подсети) соответствуют тем, которые указаны в диапазон pool'ов в манифесте. Прочитать про CIDR можно [здесь](https://habr.com/ru/post/351574/).
+Можно заметить, что их [маски подсети (CIDR)](https://ru.wikipedia.org/wiki/Маска_подсети) соответсвуют тем, что указаны в диапазон pool'ов в манифесте
 
-##3 Deployment и Service
-
-Манифест для развертывания берем из 2 лабораторной работы и заменяем метку на `lab4-frontend`.
-
-[Шаблон манифеста](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/?hl=ru) для сервиса типа Load-Balancer возьмем с официальной документации и также заменим метку на `lab4-frontend`.
-
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: lab4-service
-spec:
-  selector:
-    app: lab4-frontend
-  ports:
-    - port: 3000
-      targetPort: 3000
-  type: LoadBalancer
-```
-
-Переходим в папку с .yaml файлом и выполняем команду:
+##3. Deployment и Service
+Манифесты для развертывания прикреплены в директории - [lab4-deployment.yaml](/lab4/manifesty/lab4-deployment.yaml), [lab4-service.yaml](lab4/manifesty/lab4-service.yaml)
+Далее выполняется команда:
 ```
 kubectl apply -f lab4-deployment.yaml -f lab4-service.yaml
 ```
 
-Проверяем, что появилось развертывание и сервис: `kubectl get deployments`, `kubectl get services`.
-
+Проверяем, что появилось развертывание и сервис: 
+```
+kubectl get deployments
+```
+```
+kubectl get services
+```
 ![](/lab4/image/7.png)
 
 Проверяем IP созданных Pod'ов: `kubectl get pods -o wide`.
@@ -155,9 +140,11 @@ kubectl apply -f lab4-deployment.yaml -f lab4-service.yaml
 ![](/lab4/image/8.png)
 
 ### Проброс порта
-Пробрасываем порт для подключения к сервису через браузер: `kubectl port-forward service/lab4-service 8200:3000`.
-
-Переходим по ссылке: `http://localhost:8200/`.
+Пробрасываем порт для подключения к сервису через браузер: 
+```
+kubectl port-forward service/lab4-service 8200:3000
+```
+Можно перейти по ссылке: `http://localhost:8200/`.
 
 ![](/lab4/image/9.png)
 
