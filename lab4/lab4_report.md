@@ -7,20 +7,14 @@ Group: K4111с
 Author: Ishutina Yelizaveta
 Lab: Lab4
 Date of create: 30.10.2023
-Date of finished: 16.10.2023
+Date of finished: 01.11.2023
 
 ## Лабораторная работа №4 "Сети связи в Minikube, CNI и CoreDNS"
-### Описание
-
-Это последняя лабораторная работа в которой вы познакомитесь с сетями связи в Minikube. Особенность Kubernetes заключается в том, что у него одновременно работают `underlay` и `overlay`  сети, а управление может быть организованно различными CNI.
 
 ### Цель работы
-
 Познакомиться с CNI Calico и функцией `IPAM Plugin`, изучить особенности работы CNI и CoreDNS.
 
-
 ### Задачи
-
 - При запуске minikube установите плагин `CNI=calico` и режим работы `Multi-Node Clusters` одновеременно, в рамках данной лабораторной работы вам нужно развернуть 2 ноды.
 
 > Оригинальная инструкция для установки Calico в Minikube [ссылка](https://projectcalico.docs.tigera.io/getting-started/kubernetes/minikube)
