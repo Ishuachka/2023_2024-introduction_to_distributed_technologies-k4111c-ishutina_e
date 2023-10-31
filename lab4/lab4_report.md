@@ -60,13 +60,13 @@ minikube start --network-plugin=cni --cni=calico --nodes 2 -p multinode-demo
 ```
 kubectl get nodes
 ```
-![]()
+![](/lab4/image/22.png)
 
 Проверить работу CNI Calico, проверяется количество подов с меткой **calico-node**. Их число должно совпадать с количеством нод. Проверяем с помощью следующей команды:
 ```
 kubectl get pods -l k8s-app=calico-node -A
 ```
-![]()
+![](/lab4/image/3.png)
 
 ## 2. Пометка нод
 В соответствии с заданием помечается каждая нода по географическому расположению
@@ -123,7 +123,7 @@ Calico рекомендует использовать режим `CrossSubnet` 
 ```
 kubectl create -f calicoctl.yaml
 ```
-![]()
+![](/lab4/image/4.png)
 
 Перед созданием IPPools, проверяются созданные по-умолчанию и удаляются: 
 ```
@@ -175,17 +175,18 @@ kubectl apply -f lab4-deployment.yaml -f lab4-service.yaml
 
 Проверяем, что появилось развертывание и сервис: `kubectl get deployments`, `kubectl get services`.
 
-![]()
+![](/lab4/image/7.png)
 
 Проверяем IP созданных Pod'ов: `kubectl get pods -o wide`.
 
-![]()
+![](/lab4/image/8.png)
+
 ### Проброс порта
 Пробрасываем порт для подключения к сервису через браузер: `kubectl port-forward service/lab4-service 8200:3000`.
 
 Переходим по ссылке: `http://localhost:8200/`.
 
-![]()
+![](/lab4/image/9.png)
 
 ### Попингуем?
 
@@ -195,7 +196,7 @@ kubectl apply -f lab4-deployment.yaml -f lab4-service.yaml
 kubectl exec -ti lab4-deployment-84c64d85b4-q2g8q -- sh
 ```
 
-![]()
+![](/lab4/image/10.png)
 Чтобы выйти из контейнера, используем команду `exit`.
 
 Пингуем с контейнера `lab4-deployment-84c64d85b4-rn4hf` контейнеру с IP-адресом: `ping 192.168.1.194` с помощью команды:
@@ -204,7 +205,7 @@ kubectl exec -ti lab4-deployment-84c64d85b4-q2g8q -- sh
 kubectl exec -ti lab4-deployment-84c64d85b4-rn4hf -- sh
 ```
 
-![]()
+![](/lab4/image/11.png)
 
 ### Диаграмма
 Схема организации Node, нарисованная в [draw.io](https://app.diagrams.net/).
