@@ -149,7 +149,8 @@ kubectl exec -i -n kube-system calicoctl -- /calicoctl --allow-version-mismatch 
 
 Заметим, что их [маски подсети (CIDR)](https://ru.wikipedia.org/wiki/Маска_подсети) соответствуют тем, которые указаны в диапазон pool'ов в манифесте. Прочитать про CIDR можно [здесь](https://habr.com/ru/post/351574/).
 
-##3. Deployment и Service
+##3 Deployment и Service
+
 Манифест для развертывания берем из 2 лабораторной работы и заменяем метку на `lab4-frontend`.
 
 [Шаблон манифеста](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/?hl=ru) для сервиса типа Load-Balancer возьмем с официальной документации и также заменим метку на `lab4-frontend`.
@@ -188,34 +189,28 @@ kubectl apply -f lab4-deployment.yaml -f lab4-service.yaml
 
 ![](/lab4/image/9.png)
 
-### Попингуем?
+### Ping
 
-Пингуем с контейнера `lab4-deployment-84c64d85b4-q2g8q` контейнеру с IP-адресом: `ping 192.168.0.71` с помощью команды:
+Пингуем с контейнера `lab4-deployment-767f5987bb-cxftn` контейнеру с IP-адресом: `ping 192.168.0.78` с помощью команды:
 
 ```
-kubectl exec -ti lab4-deployment-84c64d85b4-q2g8q -- sh
+kubectl exec -ti lab4-deployment-767f5987bb-cxftn -- sh
 ```
 
 ![](/lab4/image/10.png)
+
 Чтобы выйти из контейнера, используем команду `exit`.
 
-Пингуем с контейнера `lab4-deployment-84c64d85b4-rn4hf` контейнеру с IP-адресом: `ping 192.168.1.194` с помощью команды:
+Пингуем с контейнера `lab4-deployment-84c64d85b4-rn4hf` контейнеру с IP-адресом: `ping 192.168.0.79` с помощью команды:
 
 ```
-kubectl exec -ti lab4-deployment-84c64d85b4-rn4hf -- sh
+kubectl exec -ti lab4-deployment-767f5987bb-5k9jt -- sh
 ```
 
 ![](/lab4/image/11.png)
 
-### Диаграмма
+### Схема
 Схема организации Node, нарисованная в [draw.io](https://app.diagrams.net/).
 
 ![]()
 
----
-## Ошибки (в хронологическом порядке)
-
----
-## Полезные ссылки
-1. [Как pod в Kubernetes получает IP-адрес](https://habr.com/ru/company/flant/blog/521406/)
-2. [CoreDNS — DNS-сервер для мира cloud native и Service Discovery для Kubernetes](https://habr.com/ru/company/flant/blog/331872/)
