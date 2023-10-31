@@ -44,12 +44,13 @@ Date of finished: 01.11.2023
 Ниже представлен пошаговый ход работы 
 
 ## 1. Запуск миникуба
-Запускается minikube с подключенным плагином [плагин](https://projectcalico.docs.tigera.io/getting-started/kubernetes/minikube) `CNI=calico`, режимом работы `Multi-Node Clusters` и разворачиваются 2 ноды [2 Node](https://minikube.sigs.k8s.io/docs/tutorials/multi_node/) с помощью команды:
+Запускается minikube с подключенным плагином `CNI=calico`, режимом работы `Multi-Node Clusters` и разворачиваются 2 ноды с помощью команды:
 
 ```
 minikube start --network-plugin=cni --cni=calico --nodes 2 -p multinode-demo
 ```
 ![](/lab4/image/1.png)
+
 Проверить, запустились ли 2 Node можно с помощью команды:
 ```
 kubectl get nodes
@@ -75,30 +76,7 @@ kubectl get pods -l k8s-app=calico-node -A
 kubectl label nodes multinode-demo zone=east  
 kubectl label nodes multinode-demo-m02 zone=west
 ```
-Далее из официальной документации Calico берется шаблон манифеста IPPool
-
-```yaml
-apiVersion: projectcalico.org/v3
-kind: IPPool
-metadata:
-   name: zone-east-ippool
-spec:
-   cidr: 192.168.0.0/24
-   ipipMode: Always
-   natOutgoing: true
-   nodeSelector: zone == "east"
----
-apiVersion: projectcalico.org/v3
-kind: IPPool
-metadata:
-   name: zone-west-ippool
-spec:
-   cidr: 192.168.1.0/24
-   ipipMode: Always
-   natOutgoing: true
-   nodeSelector: zone == "west"
-```
-
+Далее из официальной документации Calico берется шаблон манифеста IPPool, прикреплен в директории - [lab4_ippool.yaml](/lab4/manifesty/lab4_ippool.yaml)
 В его спеке есть следующие поля:
 - `cidr` позволяет определить количество адресов, доступных для конкретно этого IPPool. В нашем случае это `2^8 = 256` адресов.
 - `ipipMode` позволяет настроить режим IP-туннелирования.
