@@ -55,7 +55,7 @@ Date of finished: 16.10.2023
 ```
 minikube start --network-plugin=cni --cni=calico --nodes 2 -p multinode-demo
 ```
-![](lab4/image/1.png)
+![](/lab4/image/1.png)
 Проверить, запустились ли 2 Node можно с помощью команды:
 ```
 kubectl get nodes
