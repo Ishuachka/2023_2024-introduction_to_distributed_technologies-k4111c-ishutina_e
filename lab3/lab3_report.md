@@ -37,16 +37,24 @@ Date of finished: 28.10.2023
 
 ### 1. Создается манифеста
 Первым делом запускается minikube start как в прошлых лабораторных работах
+'''
+minikube start
+'''
+![](/lab3/image/1.png)
 
-Создается `ConfigMap`, файл прикреплен в директории - ConfigMap.yaml
+Далее создается `ConfigMap`, файл прикреплен в директории - ![configMap.yaml](/lab3/manifesty/configMap.yaml)
+
 Ключами выступают `react_app_user_name` и `react_app_company_name`, значения `Ishutina` и `ITMO`, соответственно.
 
-![]()
+![](/lab3/image/2.png)
 
-Далее создается `ReplicaSet`, файл прикреплен в директории - replicaSet.yaml
+![](/lab3/image/3.png)
 
-Здесь переменные окружения `REACT_APP_USERNAME` и `REACT_APP_COMPANY_NAME`, значения которых определены в `ConfigMap`. Обращаемся к `front-configmap` по соответствующим ключам.
-![]()
+После создается `ReplicaSet`, файл прикреплен в директории - ![replicaSet.yaml](/lab3/manifesty/replicaSet.yaml)
+Значения переменных окружения `REACT_APP_USERNAME` и `REACT_APP_COMPANY_NAME` определены в `ConfigMap`. Обращаемся к `front-configmap` по соответствующим ключам.
+
+![](/lab3/image/4.png)
+![](/
 
 Далее создается `Service`, файл прикреплен в директории - lab3_Service.yaml
 
