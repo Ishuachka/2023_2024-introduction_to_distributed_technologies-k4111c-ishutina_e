@@ -158,7 +158,7 @@ kubectl exec -ti lab4-deployment-767f5987bb-cxftn -- sh
 
 ![](/lab4/image/10.png)
 
-Чтобы выйти из контейнера, используем команду `exit`.
+Чтобы выйти из контейнера, используется команду `exit`.
 
 Пингуем с контейнера `lab4-deployment-84c64d85b4-rn4hf` контейнеру с IP-адресом: `ping 192.168.0.79` с помощью команды:
 
@@ -169,7 +169,8 @@ kubectl exec -ti lab4-deployment-767f5987bb-5k9jt -- sh
 ![](/lab4/image/11.png)
 
 ### Схема
-Схема организации Node, нарисованная в [draw.io](https://app.diagrams.net/).
+Схема представлена ниже
 
-![]()
+![](/lab4/image/21.png)
+
 
