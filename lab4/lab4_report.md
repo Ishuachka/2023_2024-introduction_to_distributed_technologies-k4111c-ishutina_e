@@ -148,6 +148,9 @@ kubectl port-forward service/lab4-service 8200:3000
 
 ![](/lab4/image/9.png)
 
+
+Переменные Container name и Container IP могут меняться, в зависимости от пода, на который попал запрос, а все отображаемые IP адреса соответствуют созданным в данной работе IPPool'ам.
+
 ### Ping
 
 Пингуем с контейнера `lab4-deployment-767f5987bb-cxftn` контейнеру с IP-адресом: `ping 192.168.0.78` с помощью команды:
