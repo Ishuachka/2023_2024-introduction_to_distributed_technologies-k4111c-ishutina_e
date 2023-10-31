@@ -7,7 +7,7 @@ Group: K4111с
 Author: Ishutina Yelizaveta
 Lab: Lab3
 Date of create: 24.10.2023
-Date of finished: 16.10.2023
+Date of finished: 28.10.2023
 
 ## Лабораторная работа №3 "Сертификаты и "секреты" в Minikube, безопасное хранение данных."
 
