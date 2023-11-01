@@ -130,4 +130,4 @@ minikube tunnel
 
 ### Схема
 
-![]()
+![](/lab3/image/200.png)
