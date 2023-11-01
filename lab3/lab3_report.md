@@ -46,24 +46,25 @@ minikube start
 
 Ключами выступают `react_app_user_name` и `react_app_company_name`, значения `Ishutina` и `ITMO`, соответственно.
 ```
-
+kubectl apply -f configMap.yaml
 ```
 ![](/lab3/image/2.png)
 
 ```
-
+kubectl get configmaps
 ```
 ![](/lab3/image/3.png)
 
 После создается `ReplicaSet`, файл прикреплен в директории - ![replicaSet.yaml](/lab3/manifesty/replicaSet.yaml)
 Значения переменных окружения `REACT_APP_USERNAME` и `REACT_APP_COMPANY_NAME` определены в `ConfigMap`. Обращаемся к `front-configmap` по соответствующим ключам.
 ```
-
+kubectl apply -f replicaSet.yaml
 ```
 
 ![](/lab3/image/4.png)
-```
 
+```
+kubectl get rs
 ```
 ![](/
 
@@ -71,39 +72,40 @@ minikube start
 
 Поскольку `Ingress` работает с сервисами типа `nodePort` или `LoadBalancer`. Указан явно в сервисе тип. 
 ```
-
+kubectl apply -f lab3_Service.yaml
 ```
 
 ![]()
-```
 
+```
+kubectl get service
 ```
 
 TLS в Ingress Controller: Ingress Controller управляет входящим трафиком в кластер и обеспечивает обработку запросов по определенным правилам. Minikube также может включать Ingress Controller с поддержкой TLS, позволяя обеспечить защищенный доступ к веб-приложениям, используя сертификаты TLS. 
 ```
-
+openssl genrsa -out lab3.key 2048
 ```
 ```
-
+openssl req -key lab3.key -new -out lab3.csr
 ```
+После этой команды, в следующие поля добавляем следующую информацию : `RU`, `St.Petersburg`, `St.Petersburg`, `ITMO`, `FICT`, `lab3.ishutina`, `2023`
 ```
-
+openssl x509 -signkey lab3.key -in lab3.csr -req -days 30 -out lab3.crt
 ```
-
 ![]()
 
 Secret
 
 Secret содержит небольшое количество конфиденциальных данных, таких как пароль, токен или ключ.
 ```
-
+kubectl create secret tls lab3-tls --cert=lab3.crt --key=lab3.key
 ```
 
 ![]()
 
 Проверка, создалось ли:
 ```
-
+kubectl get secret
 ```
 ![]()
 
@@ -113,16 +115,18 @@ Ingress
 
 Сперва его надо подключить:
 ```
-
+minikube addons enable ingress
 ```
 
 ![]()
 
 Проверим наличие:
 ```
-
+kubectl apply -f lab3_Ingress.yaml
 ```
-
+```
+kubectl get ingress
+```
 ![]()
 
 Теперь переходим по указанной ссылке, предварительно перенаправим трафик командой: `minikube tunnel`.
