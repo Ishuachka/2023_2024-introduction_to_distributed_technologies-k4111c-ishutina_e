@@ -111,7 +111,7 @@ kubectl get ingress
 ```
 ![](/lab3/image/80.png)
 
-Далее, чтоб перейти в сервис, нужно вписать в hosts IP и наше доменное имя (FQNX) - `lab3.ishutina.com` :
+Далее, чтоб перейти в сервис, нужно вписать в hosts IP и наше доменное имя (FQDN) - `lab3.ishutina.com` :
 ```
 minikube ip
 ```
