@@ -100,8 +100,6 @@ kubectl create -f calicoctl.yaml
 Перед созданием IPPools, проверяются созданные по-умолчанию и удаляются c помощью следующих команд: 
 ```
 kubectl exec -i -n kube-system calicoctl -- /calicoctl --allow-version-mismatch get ippools -o wide
-```
-```
 kubectl delete ippools default-ipv4-ippool
 ```
 
@@ -109,9 +107,7 @@ kubectl delete ippools default-ipv4-ippool
 ```
 kubectl exec -i -n kube-system calicoctl -- /calicoctl --allow-version-mismatch create -f - < lab4-ippool.yaml
 ```
-![]()
-
-С помощью следующей команды проверяется, что создалось ва pool'а:
+С помощью следующей команды проверяется, что создалось два pool'а:
 ```
 kubectl exec -i -n kube-system calicoctl -- /calicoctl --allow-version-mismatch get ippool -o wide
 ```
