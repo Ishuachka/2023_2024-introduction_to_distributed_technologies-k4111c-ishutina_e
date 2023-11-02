@@ -6,7 +6,7 @@ Year: 2023/2024
 Group: K4111с
 Author: Ishutina Yelizaveta
 Lab: Lab4
-Date of create: 30.10.2023
+Date of create: 29.10.2023
 Date of finished: 01.11.2023
 
 ## Лабораторная работа №4 "Сети связи в Minikube, CNI и CoreDNS"
