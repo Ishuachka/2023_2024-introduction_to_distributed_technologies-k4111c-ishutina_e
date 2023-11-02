@@ -42,7 +42,7 @@ minikube start
 ```
 ![](/lab3/image/10.png)
 
-Далее создается манифест `lab3-deployment`, прикреплен в директории - ![lab3-deployment.yaml](/lab3/manifest/lab3-deployment.yaml), там создаются ConfigMap, Deployment с ReplicaSet и LoadBalancer для доступа к подам. 
+Далее создается манифест `lab3-deployment`, прикреплен в директории - ![lab3-deployment](/lab3/manifest/lab3-deployment.yaml), там создаются ConfigMap, Deployment с ReplicaSet и LoadBalancer для доступа к подам. 
 В ConfigMap ключами выступают `react_app_user_name` и `react_app_company_name`, значения `Ishutina` и `ITMO`, соответственно.
 Поскольку `Ingress` работает с сервисами типа `nodePort` или `LoadBalancer`. Указан явно в сервисе тип. 
 
