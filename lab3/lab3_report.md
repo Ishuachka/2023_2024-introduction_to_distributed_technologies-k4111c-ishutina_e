@@ -93,7 +93,7 @@ minikube addons enable ingress
 
 ![](/lab3/image/60.png)
 
-Теперь создается ресурс Ingress. Файл прикреплен в директории - ![lab3-ingress.yaml](/lab3/manifest/lab3-ingress.yaml)
+Теперь создается ресурс Ingress. Файл прикреплен в директории - ![lab3-ingress](/lab3/manifest/lab3-ingress.yaml)
 ```
 kubectl apply -f lab3_Ingress.yaml
 ```
@@ -129,5 +129,6 @@ minikube tunnel
 ![](/lab3/image/photo_2023-11-01_22-48-12.jpg)
 
 ### Схема
+
 
 ![](/lab3/image/200.png)
