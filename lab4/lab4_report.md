@@ -116,12 +116,11 @@ kubectl exec -i -n kube-system calicoctl -- /calicoctl --allow-version-mismatch 
 Можно заметить, что их [маски подсети (CIDR)](https://ru.wikipedia.org/wiki/Маска_подсети) соответсвуют тем, что указаны в диапазон pool'ов в манифесте
 
 ##3. Deployment и Service
-Манифесты для развертывания прикреплены в директории - [lab4-deployment.yaml](/lab4/manifesty/lab4-deployment.yaml), [lab4-service.yaml](lab4/manifesty/lab4-service.yaml)
+Манифесты для развертывания прикреплены в директории - [lab4-deployment.yaml](/lab4/manifesty/lab4-deployment.yaml), [lab4-service.yaml](/lab4/manifesty/lab4-service.yaml)
 Далее выполняется команда:
 ```
 kubectl apply -f lab4-deployment.yaml -f lab4-service.yaml
 ```
-
 Проверяем, что появилось развертывание и сервис: 
 ```
 kubectl get deployments
